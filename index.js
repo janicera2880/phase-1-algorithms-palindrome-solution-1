@@ -1,14 +1,26 @@
-function isPalindrome(word) {
-  // Write your algorithm here
-}
-
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
+//I need to make a function that returns either true or false.  When input string is same forwards and backwards, should return truue.
+//for example "mom","racecar" in reverse are the same whereas "hi" or "hello" are not...so solution should return false.
+  function reverseString(word) {
+    // create an array from the input string
+    const wordArray = word.split("");
+    // reverse the array
+    const reversedWordArray = wordArray.reverse();
+    // create a string from the reversed array
+    const reversedWord = reversedWordArray.join("");
+    // return the reversed string
+    return reversedWord;
+  }
+  
+  function isPalindrome(word) {
+    // reverse the input string
+    const reversedWord = reverseString(word);
+    // if the reversed string is the same as the input
+    if (word === reversedWord) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
